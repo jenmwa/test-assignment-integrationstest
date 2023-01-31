@@ -61,6 +61,7 @@ Set up kursen testning, Jenny Waller, fed22 Medieinstitutet 2023
         main.ts
         movieApp.ts
       __test__
+        movieApp.ts
         functions.test.ts
   node_modules
   package.json
