@@ -108,9 +108,6 @@ or, install them all together and once:
 
 ## install jest-environment-dom
 
-
-## Install jest
-
 for jest test DOM:
 
 ```bash
@@ -129,15 +126,11 @@ i testfil allra högst upp OAVSETT vad, alltid rad 1 och som en kommentar:
  I package.json:
 
 ```bash
-  'jest': {
-    'perset': 'ts-jest'
+  "jest": {
+    "preset": 'ts-jest'
 }
 ```
- I terminalen:
 
-```bash
-  npx jest
-```
 Förenkla och göra eget script i package.json:
 
 ```bash
@@ -153,7 +146,24 @@ Förenkla och göra eget script i package.json:
   npx test
 ```
 
+## Code Coverage Config
 
+make code Coverage as a table i terminal
+```bash
+  npx jest --coverage
+```
+men vi vill ha det som en html, uppdatera pckage.json med:
+```bash
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageReporters": ["html"]
+  },
+```
+thereafter in terminal to create coverage folder:
+```bash
+  npx jest
+```
 
 
 
