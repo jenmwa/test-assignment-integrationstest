@@ -80,11 +80,11 @@ install parcel
 
 install typescript
 ```bash
-    npm install typescript
+    npm install --save-dev typescript
 ```
 install sass
 ```bash
-    npm i @parcel/transformer-sass
+    npm install --save-dev sass
 ```
 run development server
 ```bash
