@@ -33,4 +33,46 @@ För VG:
 - Bättre struktur på mock-objekten
 - Kunna strukturera dina tester och visa på god förståelse i testerna.
 - Ha code coverage på över 90%
-# test-assignment-integrationstest
+
+
+##
+
+# Testning
+
+Set up kursen testning, Jenny Waller, fed22 Medieinstitutet 2023
+
+
+# kursens mappstruktur
+### struktur<br>
+
+(projektnamn)<br>
+  - src<br>
+    - index.html<br>
+    - scss<br>
+      - main.scss<br>
+
+    - ts<br>
+      - models
+        - IOmdbResponse.ts
+        - Movie.ts
+      - services
+        - _ _ mocks _ _
+            - //skapa mock-fil .ts
+        - movieservice.ts
+      - functions.ts
+      - main.ts
+      - movieApp.ts
+   
+    - _ _ test _ _ 
+      - functions.test.ts
+
+  - .parcel-cache
+  - dist
+    - index.html
+    - main.xxx.js
+    - main.xxx.css
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - .parcelrc
