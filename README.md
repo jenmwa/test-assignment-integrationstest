@@ -165,6 +165,15 @@ thereafter in terminal to create coverage folder:
   npx jest
 ```
 
+## install axios
+
+```bash
+  npm install --save-dev axios
+```
+in service-file:
+```bash
+  import axios from "axios";
+```
 
 
 ## Examples
