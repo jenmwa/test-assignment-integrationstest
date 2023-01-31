@@ -168,7 +168,7 @@ thereafter in terminal to create coverage folder:
 ## install axios
 
 ```bash
-  npm install --save-dev axios
+  npm install axios
 ```
 in service-file:
 ```bash
