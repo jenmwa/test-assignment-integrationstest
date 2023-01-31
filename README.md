@@ -41,38 +41,177 @@ För VG:
 
 Set up kursen testning, Jenny Waller, fed22 Medieinstitutet 2023
 
+## project structure
 
-# kursens mappstruktur
-### struktur<br>
+```bash
+  (projectname)
+    src
+      index.html
+      scss
+        main.scss
+      ts
+        models
+          IOmdbResponse.ts
+          Movie.ts
+        services
+          __mocks__
+            //create-mock-file.ts
+          movieServices.ts
+        functions.ts
+        main.ts
+        movieApp.ts
+      __test__
+        functions.test.ts
+  node_modules
+  package.json
+  package-lock.json
+  tsconfig.json
+  .parcelrc
+  .gitignore
 
-(projektnamn)<br>
-  - src<br>
-    - index.html<br>
-    - scss<br>
-      - main.scss<br>
+```
 
-    - ts<br>
-      - models
-        - IOmdbResponse.ts
-        - Movie.ts
-      - services
-        - _ _ mocks _ _
-            - //skapa mock-fil .ts
-        - movieservice.ts
-      - functions.ts
-      - main.ts
-      - movieApp.ts
-   
-    - _ _ test _ _ 
-      - functions.test.ts
+## install
+install parcel
+```bash
+    npm install --save-dev parcel
+```
 
-  - .parcel-cache
-  - dist
-    - index.html
-    - main.xxx.js
-    - main.xxx.css
-  - node_modules
-  - package.json
-  - package-lock.json
-  - tsconfig.json
-  - .parcelrc
+install typescript
+```bash
+    npm install typescript
+```
+install sass
+```bash
+    npm i @parcel/transformer-sass
+```
+run development server
+```bash
+    npx parcel src/index.html --no-cache
+```
+
+
+## Install jest
+
+npm install --save-dev jest
+
+npm install --save-dev ts-jest
+
+npm install --save-dev @types/jest
+
+or, install them all together and once: 
+```bash
+  npm install --save-dev jest ts-jest @types/jest
+```
+
+
+## install jest-environment-dom
+
+
+## Install jest
+
+for jest test DOM:
+
+```bash
+  npm i --save-dev jest-environment-jsdom
+```
+
+i testfil allra högst upp OAVSETT vad, alltid rad 1 och som en kommentar: 
+```bash
+  /**
+ * @jest-enviroment jsdom
+ */
+```
+
+## configs
+
+ I package.json:
+
+```bash
+  'jest': {
+    'perset': 'ts-jest'
+}
+```
+ I terminalen:
+
+```bash
+  npx jest
+```
+Förenkla och göra eget script i package.json:
+
+```bash
+  
+  "scripts": {
+    "test": "npx jest --watchAll"
+  }
+```
+
+ därefter i terminalen:
+
+```bash
+  npx test
+```
+
+
+
+
+
+## Examples
+
+examples test
+
+```bash
+  test('should add numbers correctly', () => {
+    // 1.arrange
+    let small = 4;
+    let big = 4711;
+    let sum= 0;
+
+    //2. act
+    sum = add(small, big);
+    
+    //3. assert
+    expect(sum).toBe(4715);
+
+});
+```
+    
+## Matchers
+
+Jest matchers are functions that make it easy to perform assertions in Jest test cases. They can be used to check that a value or expression meets certain conditions. Jest provides a wide variety of built-in matchers that can be used to check for different types of conditions.
+Here are some common examples of Jest matchers:
+* toBe: checks that two values are the same using the strict equality operator (===)
+* toEqual: checks that two values are the same using the loose equality operator (==)
+* toBeNull: checks that a value is null
+* toBeUndefined: checks that a value is undefined
+* toBeDefined: checks that a value is not undefined
+* toBeTruthy: checks that a value is truthy (i.e. evaluates to true when used in a boolean context)
+* toBeFalsy: checks that a value is falsy (i.e. evaluates to false when used in a boolean context)
+* toContain: checks that an array or a string contains a specific element
+* toThrow: checks that a function throws an error when called
+* toMatch: checks that a string matches a regular expression
+* toHaveBeenCalled: checks that a mock function has been called
+* toHaveBeenCalledWith: checks that a mock function has been called with specific arguments
+You can also chain matchers together, for example you can use toBeGreaterThan and toBeLessThan to check a value is within a certain range.
+You can also create custom matchers by extending the expect API.
+Jest also supports async tests, it provides resolves and rejects matchers to work with promise, resolves allows you to test if a promise is resolved and rejects allows you to test if a promise is rejected.
+It's important to note that Jest matchers should be used inside of test cases, wrapped inside of the expect() function, like this: expect(value).toBe(expectedValue).
+
+
+
+
+
+
+
+## Usage/Examples
+
+```javascript
+import { sendMessage } from "../ts/main";
+
+test('should be what goes in', () => {
+  let message = sendMessage('Hello World');
+  expect(message).toBe('Hello World');
+
+});
+```
+
