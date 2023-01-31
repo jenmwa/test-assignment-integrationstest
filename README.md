@@ -143,7 +143,7 @@ Förenkla och göra eget script i package.json:
  därefter i terminalen:
 
 ```bash
-  npx test
+  npm test
 ```
 
 ## Code Coverage Config
@@ -152,7 +152,7 @@ make code Coverage as a table i terminal
 ```bash
   npx jest --coverage
 ```
-men vi vill ha det som en html, uppdatera pckage.json med:
+create Coverage html, update pckage.json with:
 ```bash
   "jest": {
     "testEnvironment": "node",
