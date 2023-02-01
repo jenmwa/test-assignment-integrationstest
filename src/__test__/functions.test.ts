@@ -1,3 +1,3 @@
- /**
- * @jest-enviroment jsdom
+/**
+ * @jest-environment jsdom
  */

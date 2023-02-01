@@ -116,9 +116,10 @@ for jest test DOM:
 
 i testfil allra högst upp OAVSETT vad, alltid rad 1 och som en kommentar: 
 ```bash
-  /**
- * @jest-enviroment jsdom
+/**
+ * @jest-environment jsdom
  */
+
 ```
 
 ## configs
