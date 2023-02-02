@@ -2,15 +2,50 @@
  * @jest-environment jsdom
  */
 
-import { init } from "../ts/movieApp";
+import { IMovie } from "../ts/models/Movie";
+import * as movieApp from '../ts/movieApp';
 
-jest.mock('../ts/services/movieservice');
+import { getData } from "../ts/services/__mocks__/movieserviceMock";
 
+jest.mock('../ts/services/__mocks__/movieserviceMock');
+
+beforeEach(() => {
+    document.body.innerHTML = "";
+});
 
  test('should create Html correctly', () => {
-    init();
+  
+  //arrange
+  const movies: IMovie[] = [{
+    
+      Title: 'Casablanca',
+      imdbID: 'tt0034583',
+      Type: 'movie',
+      Poster: '',
+      Year: '1942'
+  
+  }];
+  document.body.innerHTML = `<div id="movie-container"></div>`;
+  const movieContainer = document.querySelector('#movie-container') as HTMLDivElement;
 
-    let movies = document.querySelectorAll('h3');
+  //act
+  movieApp.createHtml(movies, movieContainer);
 
-    expect(movies.length).toBe(4);
- })
+  //assert
+  expect(movieContainer.innerHTML).toContain('Casablanca');
+});
+
+
+
+test('should display a "No results" message ', () => {
+  //arrange
+  document.body.innerHTML = `<div id="movie-container"></div>`;
+  const movieContainer = document.querySelector('#movie-container') as HTMLDivElement;
+  
+  //act
+  movieApp.displayNoResult(movieContainer);
+
+  //assert
+  expect(movieContainer.innerHTML).toEqual('<p>Inga sökresultat att visa</p>');
+
+  });
